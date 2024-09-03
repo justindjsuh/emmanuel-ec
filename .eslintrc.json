@@ -1,3 +1,20 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "rules": {
+    "semi": ["error", "always"],
+    "quotes": ["error", "single"],
+    "max-len": ["error", {
+      "code": 120,
+      "ignoreRegExpLiterals": true,
+      "ignoreStrings": true,
+      "ignoreTemplateLiterals": true,
+      "ignoreUrls": true
+    }],
+    "no-console": ["error", {
+      "allow": [
+        "warn",
+        "error"
+      ]
+    }]
+  }
 }
