@@ -1,0 +1,207 @@
+.landingPage {
+    background-image: url("/emmanuel-church-bg-test.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.landingPageContainer {
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    color: var(--background-primary);
+}
+
+.landingDetails {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.curvesSVG {
+    align-items: flex-end;
+    width: 100vw;
+    height: auto;
+    filter: invert(66%) sepia(21%) saturate(284%) hue-rotate(115deg) brightness(92%) contrast(89%);
+    transform: rotate(180deg);
+}
+
+.landingDetails h1 {
+    font-size: 6rem;
+    letter-spacing: .2rem;
+}
+
+.landingDetails p {
+    font-size: 1.5rem;
+}
+
+.landingDetails p:first-of-type {
+    font-weight: 600;
+}
+
+.landingDetails span {
+    color: var(--btn-accent)
+}
+
+.textDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .2rem;
+}
+
+.landingDetails button {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    margin-top: 1rem;
+    border: transparent;
+    border-radius: 10rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1rem;
+    letter-spacing: 0.15rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    cursor: pointer;
+}
+.landingDetails button:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-quaternary);
+    border-radius: 10rem;
+    z-index: -2;
+}
+.landingDetails button:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #69847d;
+    transition: all 0.3s;
+    border-radius: 10rem;
+    z-index: -1;
+}
+.landingDetails button:hover {
+    color: #fff;
+}
+.landingDetails button:hover:before {
+    width: 100%;
+}
+
+
+.downIndicatorDiv {
+    display: flex;
+    justify-content: center;
+}
+
+#sd {
+    &-container {
+      position: fixed;
+      bottom: 10px;
+      left: 50%;
+      transform: translateY(-50%);
+    }
+  }
+  
+.arrow {
+    position: relative;
+    width: 42px;
+    height: 16px;
+    opacity: 0;
+
+    &::before,
+    &::after {
+      content: "";
+      width: 21px;
+      height: 3px;
+      background-color: #fff;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    &::before {
+      transform: rotate(45deg) translateX(25%)
+    }
+
+    &::after {
+      transform: rotate(-45deg) translateX(-25%)
+    }
+
+    &:nth-child(1) {
+      top: -50px;
+      opacity: 1;
+      animation: arrow2 1s ease 0s infinite;
+    }
+
+    &:nth-child(2) {
+      top: -25px;
+      animation: arrow1 1s ease 0.25s infinite;
+    }
+}
+
+@keyframes arrow1 {
+    from {
+      opacity: 0;
+      top: -25px;
+    }
+
+    to {
+      opacity: 0;
+      top: 0px;
+    }
+
+    50% {
+      opacity: 1;
+    }
+}
+
+@keyframes arrow2 {
+    from {
+      opacity: 0;
+      top: -35px;
+    }
+
+    to {
+      opacity: 0;
+      top: -10px;
+    }
+
+    50% {
+      opacity: 1;
+    }
+}
+
+
+@media (max-width: 575px) {
+    .landingPage {
+        background-position: center;
+    }
+    .landingDetails h1 {
+        font-size: 3rem;
+        letter-spacing: .2rem;
+    }
+    .landingDetails p {
+        font-size: 1rem;
+    }
+    .landingDetails button {
+        font-size: .8rem;
+    }
+    .landingDetails {
+        gap: .5rem;
+    }
+}
+
+@media (max-width: 1199px) {
+    .landingPage {
+        background-position: center;
+    }
+}

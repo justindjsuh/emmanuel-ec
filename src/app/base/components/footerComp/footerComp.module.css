@@ -1,0 +1,26 @@
+.headerContainer {
+    width: 100%;
+    background-color: var(--background-quaternary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    height: 10vh;
+}
+
+.headerLogo {
+    width: 70%;
+    height: auto;
+}
+
+.navButtonContainer {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navButtonContainer button {
+    background-color: transparent;
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 500;
+}
