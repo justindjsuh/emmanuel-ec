@@ -17,11 +17,11 @@ const DetailsSection: React.FunctionComponent = () => {
             </div>
             <div className={styles.detailsCardContainer}>
                 <div className={styles.detailCard}>
-                    <div className={styles.imgContainer}>
+                    <div className={`${styles.imgContainer} ${styles.homeImg}`}>
                         <Image
-                            src="/home.png"
+                            src="/home2.png"
                             alt="Place You Can Call Home Image"
-                            width={349}
+                            width={500}
                             height={350}
                             objectFit="cover"
                         />
@@ -29,18 +29,20 @@ const DetailsSection: React.FunctionComponent = () => {
                     <div className={styles.detailText}>
                         <p>A PLACE YOU CAN CALL HOME</p>
                         <p>
-                            Lorem ipsum odor amet, consectetuer adipiscing elit.
-                            Rutrum sed vehicula fermentum curabitur cursus
-                            gravida tincidunt.
+                            Join us as one united family under Christ&apos;s
+                            headship. We desire to see our brothers and sisters
+                            grow and support each other in this walk of faith!
                         </p>
                     </div>
                 </div>
                 <div className={styles.detailCard}>
-                    <div className={styles.imgContainer}>
+                    <div
+                        className={`${styles.imgContainer} ${styles.reflectionsImg}`}
+                    >
                         <Image
-                            src="/reflections.png"
+                            src="/reflection.png"
                             alt="Friday Night Reflections Image"
-                            width={550}
+                            width={600}
                             height={350}
                             objectFit="cover"
                         />
@@ -48,18 +50,20 @@ const DetailsSection: React.FunctionComponent = () => {
                     <div className={styles.detailText}>
                         <p>FRIDAY NIGHT REFLECTIONS</p>
                         <p>
-                            Lorem ipsum odor amet, consectetuer adipiscing elit.
-                            Rutrum sed vehicula fermentum curabitur cursus
-                            gravida tincidunt.
+                            Join us during our Friday Night Reflections! We have
+                            small groups that are focused on sharing with fellow
+                            brothers and sisters and growing as one community.
                         </p>
                     </div>
                 </div>
                 <div className={styles.detailCard}>
-                    <div className={styles.imgContainer}>
+                    <div
+                        className={`${styles.imgContainer} ${styles.fellowshipsImg}`}
+                    >
                         <Image
                             src="/fellowships.png"
                             alt="Monthly Fellowships Image"
-                            width={420}
+                            width={500}
                             height={350}
                             objectFit="cover"
                         />
@@ -67,9 +71,9 @@ const DetailsSection: React.FunctionComponent = () => {
                     <div className={styles.detailText}>
                         <p>MONTHLY FELLOWSHIPS</p>
                         <p>
-                            Lorem ipsum odor amet, consectetuer adipiscing elit.
-                            Rutrum sed vehicula fermentum curabitur cursus
-                            gravida tincidunt.
+                            We maintain monthly congregational fellowships where
+                            we can engage with one another with games,
+                            conversation, and food!
                         </p>
                     </div>
                 </div>

@@ -6,6 +6,7 @@ import { MouseEvent, useState } from "react";
 import LandingPage from "./base/views/landingPage/LandingPage";
 import HeaderComp from "./base/components/headerComp/headerComp";
 import DetailsSection from "./base/views/detailsSection/DetailsSection";
+import VisionMissionSection from "./base/views/visionMissionSection/VisionMissionSection";
 
 const Home = () => {
     const [fullName, setFullName] = useState("");
@@ -52,6 +53,7 @@ const Home = () => {
         <main className={styles.main}>
             <LandingPage />
             <DetailsSection />
+            <VisionMissionSection />
         </main>
     );
 };

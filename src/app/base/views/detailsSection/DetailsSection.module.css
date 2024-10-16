@@ -21,9 +21,9 @@
 .detailsCardContainer {
     display: flex;
     padding: 0 2rem;
-    gap: 1rem;
+    gap: 2.5rem;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-start;
     justify-content: center;
 }
 
@@ -37,7 +37,7 @@
 .detailText {
     display: flex;
     flex-direction: column;
-    width: 95%;
+    width: 100%;
     gap: .3rem;
 }
 
@@ -46,17 +46,47 @@
 }
 
 .imgContainer {
-    width: 20rem;
-    height: 20rem;
+    width: 21.875rem;
+    height: 21.875rem;
     overflow: hidden;
     border-radius: 1rem;
+    display: flex;
+}
+
+.homeImg {
+    justify-content: center;
+}
+
+.reflectionsImg {
+    justify-content: center;
+}
+
+.fellowshipsImg {
+    justify-content: center;
+    padding-left: 5rem;
 }
 
 .mobileText {
     display: none;
 }
 
+@media (max-width: 1199px) {
+    .detailCard {
+        width: 280px;
+    }
+    .imgContainer {
+        width: 17rem;
+    }
+}
+
 @media (max-width: 575px) {
+    .detailCard {
+        width: 90vw;
+    }
+    .imgContainer {
+        width: 90vw;
+        height: 20vh;
+    }
     .mobileText {
         display: flex;
         flex-direction: column;
@@ -64,5 +94,23 @@
     }
     .nonMobileText {
         display: none;
+    }
+    .detailCard {
+        align-items: center;
+    }
+    .imgContainer {
+        flex-direction: column;
+    }
+    .homeImg {
+        justify-content: center;
+    }
+    .reflectionsImg {
+        justify-content: flex-start;
+        align-items: center;
+    }
+    
+    .fellowshipsImg {
+        justify-content: center;
+        padding-left: 0;
     }
 }
