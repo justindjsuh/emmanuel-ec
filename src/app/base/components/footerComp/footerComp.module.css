@@ -25,6 +25,17 @@
     flex-direction: column;
 }
 
+.navButtonContainer a {
+    background-color: transparent;
+    color: var(--background-primary);
+    border: none;
+    font-family: 'Montserrat';
+    font-weight: 400;
+    cursor: pointer;
+    text-align: left;
+    font-size: .85rem;
+}
+
 .navButtonContainer button {
     background-color: transparent;
     color: var(--background-primary);
@@ -33,6 +44,7 @@
     font-weight: 400;
     cursor: pointer;
     text-align: left;
+    font-size: .85rem;
 }
 
 .navFooterContainer {

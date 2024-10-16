@@ -25,7 +25,14 @@ const HeaderComp: React.FunctionComponent = () => {
                 </div>
                 <div className={styles.navButtonContainer}>
                     <button>New Here?</button>
-                    <button>YouTube</button>
+                    <button>
+                        <a
+                            href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
+                            target="_blank"
+                        >
+                            Tune In Live
+                        </a>
+                    </button>
                     <button>About Us</button>
                 </div>
             </div>
@@ -59,11 +66,9 @@ const HeaderComp: React.FunctionComponent = () => {
                 >
                     <button>New Here?</button>
                     <hr />
-                    <button>Announcements</button>
+                    <button>Tune In Live</button>
                     <hr />
                     <button>About Us</button>
-                    <hr />
-                    <button>Schedule</button>
                 </div>
             </div>
         </>

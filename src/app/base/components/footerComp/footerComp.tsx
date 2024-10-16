@@ -19,16 +19,36 @@ const FooterComp: React.FunctionComponent = () => {
                     <p>NAVIGATION</p>
                     <div className={styles.navButtonContainer}>
                         <button>New Here?</button>
-                        <button>YouTube</button>
+                        <a
+                            href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
+                            target="_blank"
+                        >
+                            Tune In Live
+                        </a>
                         <button>About Us</button>
                     </div>
                 </div>
                 <div className={styles.navFooterTwo}>
                     <p>SOCIAL MEDIA</p>
                     <div className={styles.navButtonContainer}>
-                        <button>YouTube</button>
-                        <button>Instagram</button>
-                        <button>Facebook</button>
+                        <a
+                            href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
+                            target="_blank"
+                        >
+                            YouTube
+                        </a>
+                        <a
+                            href="https://www.instagram.com/emmanuelchurchec/"
+                            target="_blank"
+                        >
+                            Instagram
+                        </a>
+                        <a
+                            href="https://www.facebook.com/emmanuelenglishpca/"
+                            target="_blank"
+                        >
+                            Facebook
+                        </a>
                     </div>
                 </div>
             </div>

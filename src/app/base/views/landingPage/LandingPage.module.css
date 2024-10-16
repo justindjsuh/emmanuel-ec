@@ -1,5 +1,5 @@
 .landingPage {
-    background-image: url("/emmanuel-church-bg-test.jpg");
+    background-image: url("/sample-church-bg.jpg");
     background-repeat: no-repeat;
     background-size: cover;
 }
@@ -57,9 +57,9 @@
     margin-top: 1rem;
     border: transparent;
     border-radius: 10rem;
-    color: #fff;
+    color: var(--background-primary);
     text-transform: uppercase;
-    font-size: 1rem;
+    font-size: .8rem;
     letter-spacing: 0.15rem;
     transition: all 0.3s;
     position: relative;
@@ -67,6 +67,7 @@
     z-index: 1;
     cursor: pointer;
 }
+
 .landingDetails button:after {
     content: '';
     position: absolute;
@@ -78,6 +79,7 @@
     border-radius: 10rem;
     z-index: -2;
 }
+
 .landingDetails button:before {
     content: '';
     position: absolute;
@@ -90,9 +92,11 @@
     border-radius: 10rem;
     z-index: -1;
 }
+
 .landingDetails button:hover {
     color: #fff;
 }
+
 .landingDetails button:hover:before {
     width: 100%;
 }
