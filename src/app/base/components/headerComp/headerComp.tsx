@@ -24,14 +24,9 @@ const HeaderComp: React.FunctionComponent = () => {
                     />
                 </div>
                 <div className={styles.navButtonContainer}>
-                    {/* New here */}
                     <button>New Here?</button>
-                    {/* Connect */}
-                    <button>Announcements</button>
-                    {/* About Us */}
+                    <button>YouTube</button>
                     <button>About Us</button>
-                    {/* Schedule */}
-                    <button>Schedule</button>
                 </div>
             </div>
             <div className={styles.headerContainerMobile}>
