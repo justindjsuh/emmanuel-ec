@@ -1,4 +1,3 @@
-import Image from "next/image";
 import styles from "./FinalSection.module.css";
 
 const FinalSection: React.FunctionComponent = () => {

@@ -8,6 +8,7 @@ import HeaderComp from "./base/components/headerComp/headerComp";
 import DetailsSection from "./base/views/detailsSection/DetailsSection";
 import VisionMissionSection from "./base/views/visionMissionSection/VisionMissionSection";
 import FinalSection from "./base/views/finalSection/FinalSection";
+import WhoWeAreSection from "./base/views/whoWeAreSection/WhoWeAreSection";
 
 const Home = () => {
     const [fullName, setFullName] = useState("");
@@ -55,6 +56,7 @@ const Home = () => {
             <LandingPage />
             <DetailsSection />
             <VisionMissionSection />
+            <WhoWeAreSection />
             <FinalSection />
         </main>
     );
