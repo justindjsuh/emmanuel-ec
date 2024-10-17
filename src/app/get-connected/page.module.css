@@ -1,0 +1,181 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.leftContainer {
+    width: 50vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leftContainer p:first-of-type {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.leftContainer p {
+    width: 100%;
+}
+
+.leftContainer .headerLogo {
+    position: absolute;
+    top: 30px;
+    left: 20px;
+}
+
+.formContainer {
+    width: 60%;
+}
+
+.formContainer hr {
+    margin: 1rem 0;
+    border: none;
+    border-top: 1px solid var(--divider-primary)
+}
+
+.welcomeFormContent {
+    display: flex;
+    flex-direction: column;
+}
+
+.inputCard {
+    display: flex;
+}
+
+.inputCard img {
+    position: absolute;
+    margin-top: 20px;
+    margin-left: 12px;
+}
+
+.inputCard input {
+    border: 1px solid #9f9f9f;
+    padding: 1rem .5rem;
+    padding-left: 3rem;
+    border-radius: .5rem;
+    margin: .5rem 0;
+    background-color: rgb(253, 253, 253);
+    width: 100%;
+}
+
+.inputCard input::placeholder {
+    color: #7b7b7b;
+    font-weight: 500;
+    font-family: "Montserrat";
+    font-size: .8rem;
+}
+
+.welcomeFormContent button {
+    background-color: var(--background-quaternary);
+    font-family: "Montserrat";
+    font-size: .8rem;
+    margin-top: .5rem;
+    padding: 1rem;
+    border: none;
+    border-radius: .5rem;
+    color: var(--text-primary-light);
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.welcomeFormContent .disabled {
+    background-color: #a2a2a2;
+    cursor: not-allowed;
+}
+
+.rightContainer {
+    position: relative;
+    width: 45vw;
+    height: 95vh;
+    margin-right: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+.rightContainer img {
+    border-radius: 2rem;
+}
+
+.textContainer {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.footerVerse {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+}
+
+.textContainer .footerVerse p {
+    font-size: .8rem;
+}
+
+.textHeader {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+.detailChips {
+    margin-top: .5rem;
+    display: flex;
+    gap: 1rem;
+}
+
+.detailChips span {
+    border: 1px solid var(--text-primary-dark);
+    padding: .5rem .75rem;
+    font-size: .7rem;
+    border-radius: 10rem;
+}
+
+@media (max-width: 1199px) {
+    .container {
+        justify-content: space-around;
+    }
+    .rightContainer {
+        margin-right: 0;
+    }
+}
+
+@media (max-width: 575px) {
+    .container {
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    .leftContainer {
+        width: 100%;
+        height: fit-content;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding-top: 3rem;
+        gap: 2rem;
+    }
+    .formContainer {
+        width: 90%;
+    }
+    .rightContainer {
+        padding: 2rem 1rem;
+        width: 95%;
+        height: fit-content;
+        margin-bottom: 1rem;
+    }
+    .rightContainer img {
+        object-position: top;
+    }
+    .leftContainer .headerLogo {
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+}

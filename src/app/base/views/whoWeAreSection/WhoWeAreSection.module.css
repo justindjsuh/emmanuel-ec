@@ -18,3 +18,23 @@
     font-size: 2rem;
     font-weight: 600;
 }
+
+@media (max-width: 1199px) {
+    .whoWeAreSectionContainer {
+        gap: 2rem;
+    }
+    .whoWeAreText {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .whoWeAreSectionContainer {
+        flex-direction: column;
+        padding: 2rem 1rem;
+    }
+    .imgContainer img {
+        width: 350px;
+        height: 210px;
+    }
+}

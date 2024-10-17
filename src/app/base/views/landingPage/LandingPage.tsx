@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./LandingPage.module.css";
 import HeaderComp from "../../components/headerComp/headerComp";
+import Link from "next/link";
 
 const LandingPage: React.FunctionComponent = () => {
     return (
@@ -15,7 +16,9 @@ const LandingPage: React.FunctionComponent = () => {
                         </p>
                         <p>Service | 10AM</p>
                     </div>
-                    <button>GET CONNECTED</button>
+                    <button>
+                        <Link href="/get-connected">GET CONNECTED</Link>
+                    </button>
                 </div>
                 <div className={styles.downIndicatorDiv}>
                     <div id={styles.sdContainer}>
