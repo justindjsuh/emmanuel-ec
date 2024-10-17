@@ -156,6 +156,7 @@ const Page: React.FunctionComponent = () => {
                     alt="Church Image"
                     fill
                     objectFit="cover"
+                    priority
                 />
             </div>
         </div>
