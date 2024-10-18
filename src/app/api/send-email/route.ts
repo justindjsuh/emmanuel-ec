@@ -1,13 +1,13 @@
 // pages/api/send-email.js
-import { NextApiResponse } from 'next';
-import { NextRequest, NextResponse } from 'next/server';
-import nodemailer from 'nodemailer';
+import { NextApiResponse } from "next";
+import { NextRequest, NextResponse } from "next/server";
+import nodemailer from "nodemailer";
 
 export async function POST(req: NextRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
+  if (req.method === "POST") {
     // Create a transporter object using the default SMTP transport
     const transporter = nodemailer.createTransport({
-      host: 'smtp.gmail.com',
+      host: "smtp.gmail.com",
       port: 587, // or 465 for secure connections
       secure: false, // true for 465, false for other ports
       auth: {
@@ -26,7 +26,7 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
         to, // list of receivers
         subject, // Subject line
         text, // plain text body
-        // html: '<b>Hello world?</b>', // html body (optional)
+        // html: "<b>Hello world?</b>", // html body (optional)
       });
       return NextResponse.json({ success: true, info }, { status: 200 });
     } catch (error) {
@@ -34,6 +34,6 @@ export async function POST(req: NextRequest, res: NextApiResponse) {
       return NextResponse.json({ success: true, error }, { status: 500 });
     }
   } else {
-    return NextResponse.json({ success: false, error: 'Wrong HTTP Method Received' }, { status: 405 });
+    return NextResponse.json({ success: false, error: "Wrong HTTP Method Received" }, { status: 405 });
   }
 }

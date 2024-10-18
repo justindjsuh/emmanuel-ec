@@ -1,0 +1,110 @@
+.sectionContainer {
+    background-color: var(--background-secondary);
+    padding: 4rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.sectionContainer hr {
+    margin: 3.5rem 0;
+    border: 1px solid var(--divider-primary)
+}
+
+.visionAndMissionContainer {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.imgContainer {
+    display: flex;
+    justify-content: flex-end;
+    flex: 1;
+}
+
+.imgContainer img {
+    border-radius: 1rem;
+}
+
+.visionAndMissionTextContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 1rem;
+    flex: 1;
+}
+
+.textContainer {
+    width: 70%;
+}
+
+.textContainer p:first-of-type {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: .75rem;
+}
+
+.valuesContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.valuesHeader {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 2.5rem;
+}
+
+.valueCardsContainer {
+    display: flex;
+    justify-content: space-around;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.valuesCard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 170px;
+}
+
+.valuesCard p {
+    text-align: center;
+}
+
+.valuesCard p:first-of-type {
+    margin: .35rem 0 0.25rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+@media (max-width: 1199px) {
+    .imgContainer {
+        justify-content: flex-start;
+    }
+    .textContainer {
+        width: 100%;
+    }
+}
+
+@media (max-width: 575px) {
+    .sectionContainer {
+        padding: 4rem .5rem;
+    }
+    .visionAndMissionContainer {
+        gap: 1rem;
+    }
+    .textContainer {
+        width: 100%;
+    }
+    .imgContainer {
+        justify-content: center;
+    }
+    .imgContainer img {
+        width: 90vw;
+        height: auto;
+    }
+}
