@@ -1,6 +1,7 @@
 import Image from "next/image";
 import styles from "./headerComp.module.css";
 import { useState } from "react";
+import Link from "next/link";
 
 const HeaderComp: React.FunctionComponent = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -24,7 +25,9 @@ const HeaderComp: React.FunctionComponent = () => {
                     />
                 </div>
                 <div className={styles.navButtonContainer}>
-                    <button>New Here?</button>
+                    <button>
+                        <Link href="/get-connected">New Here?</Link>
+                    </button>
                     <button>
                         <a
                             href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
@@ -64,9 +67,18 @@ const HeaderComp: React.FunctionComponent = () => {
                         mobileMenuOpen ? styles.open : styles.closed
                     }`}
                 >
-                    <button>New Here?</button>
+                    <button>
+                        <Link href="/get-connected">New Here?</Link>
+                    </button>
                     <hr />
-                    <button>Tune In Live</button>
+                    <button>
+                        <a
+                            href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
+                            target="_blank"
+                        >
+                            Tune In Live
+                        </a>
+                    </button>
                     <hr />
                     <button>About Us</button>
                 </div>

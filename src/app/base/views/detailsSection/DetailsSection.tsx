@@ -23,7 +23,7 @@ const DetailsSection: React.FunctionComponent = () => {
                             alt="Place You Can Call Home Image"
                             width={500}
                             height={350}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                     </div>
                     <div className={styles.detailText}>
@@ -44,7 +44,7 @@ const DetailsSection: React.FunctionComponent = () => {
                             alt="Friday Night Reflections Image"
                             width={600}
                             height={350}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                     </div>
                     <div className={styles.detailText}>
@@ -65,7 +65,7 @@ const DetailsSection: React.FunctionComponent = () => {
                             alt="Monthly Fellowships Image"
                             width={500}
                             height={350}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                     </div>
                     <div className={styles.detailText}>

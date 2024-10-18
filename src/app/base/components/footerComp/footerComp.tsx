@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "./footerComp.module.css";
+import Link from "next/link";
 
 const FooterComp: React.FunctionComponent = () => {
     return (
@@ -18,7 +19,9 @@ const FooterComp: React.FunctionComponent = () => {
                 <div className={styles.navFooterOne}>
                     <p>NAVIGATION</p>
                     <div className={styles.navButtonContainer}>
-                        <button>New Here?</button>
+                        <button>
+                            <Link href="/get-connected">New Here?</Link>
+                        </button>
                         <a
                             href="https://www.youtube.com/channel/UC1R_XJUwfqyLY2NghfrnCRA"
                             target="_blank"

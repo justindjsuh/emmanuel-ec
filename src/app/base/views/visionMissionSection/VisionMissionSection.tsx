@@ -11,7 +11,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                         alt="Cross Image"
                         width={520}
                         height={300}
-                        objectFit="cover"
+                        style={{ objectFit: "cover" }}
                     />
                 </div>
                 <div className={styles.visionAndMissionTextContainer}>
@@ -44,7 +44,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                             alt="Worship Image"
                             width={85}
                             height={85}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                         <p>WORSHIP</p>
                         <p>Glorifying and enjoying God forever</p>
@@ -55,7 +55,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                             alt="Discipleship Image"
                             width={85}
                             height={85}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                         <p>DISCIPLESHIP</p>
                         <p>Making followers of Jesus Christ</p>
@@ -66,7 +66,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                             alt="Fellowship Image"
                             width={85}
                             height={85}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                         <p>FELLOWSHIP</p>
                         <p>Building one another up in Christ</p>
@@ -77,7 +77,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                             alt="Serving Image"
                             width={85}
                             height={85}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                         <p>SERVING</p>
                         <p>Edifying the church through our gifts</p>
@@ -88,7 +88,7 @@ const VisionMissionSection: React.FunctionComponent = () => {
                             alt="Witnessing Image"
                             width={85}
                             height={85}
-                            objectFit="cover"
+                            style={{ objectFit: "cover" }}
                         />
                         <p>WITNESSING</p>
                         <p>Spreading the gospel to Philadelphia</p>

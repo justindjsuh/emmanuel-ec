@@ -10,7 +10,7 @@ const WhoWeAreSection: React.FunctionComponent = () => {
                     alt="Pastor Introduction Video Image"
                     width={513}
                     height={307}
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
                 />
             </div>
             <div className={styles.whoWeAreText}>

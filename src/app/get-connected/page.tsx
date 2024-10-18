@@ -75,7 +75,7 @@ const Page: React.FunctionComponent = () => {
                                 alt="User Account Image"
                                 width={24}
                                 height={24}
-                                objectFit="cover"
+                                style={{ objectFit: "cover" }}
                             />
                             <input
                                 name="fullName"
@@ -92,7 +92,7 @@ const Page: React.FunctionComponent = () => {
                                 alt="Email Image"
                                 width={24}
                                 height={24}
-                                objectFit="cover"
+                                style={{ objectFit: "cover" }}
                             />
                             <input
                                 name="email"
@@ -109,7 +109,7 @@ const Page: React.FunctionComponent = () => {
                                 alt="Phone Image"
                                 width={24}
                                 height={24}
-                                objectFit="cover"
+                                style={{ objectFit: "cover" }}
                             />
                             <input
                                 name="phoneNum"
@@ -155,7 +155,8 @@ const Page: React.FunctionComponent = () => {
                     src="/church-bg.jpg"
                     alt="Church Image"
                     fill
-                    objectFit="cover"
+                    style={{ objectFit: "cover" }}
+                    sizes="100%"
                     priority
                 />
             </div>

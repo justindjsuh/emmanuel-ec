@@ -1,3 +1,4 @@
+import Link from "next/link";
 import FooterComp from "../../components/footerComp/footerComp";
 import styles from "./FinalSection.module.css";
 
@@ -6,7 +7,9 @@ const FinalSection: React.FunctionComponent = () => {
         <>
             <div className={styles.finalSectionContainer}>
                 <p>WE LOOK FORWARD TO WORSHIPING WITH YOU</p>
-                <button>GET CONNECTED</button>
+                <button>
+                    <Link href="/get-connected">GET CONNECTED</Link>
+                </button>
             </div>
             <FooterComp />
         </>
