@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./headerComp.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 
 const HeaderComp: React.FunctionComponent = () => {
@@ -8,6 +8,12 @@ const HeaderComp: React.FunctionComponent = () => {
 
     const toggleMenu = () => {
         setMobileMenuOpen(!mobileMenuOpen);
+
+        if (!mobileMenuOpen) {
+            document.body.classList.add("noScroll");
+        } else {
+            document.body.classList.remove("noScroll");
+        }
     };
 
     return (
@@ -80,7 +86,9 @@ const HeaderComp: React.FunctionComponent = () => {
                         </a>
                     </button>
                     <hr />
-                    <button>About Us</button>
+                    <button>
+                        <Link href="/about">About Us</Link>
+                    </button>
                 </div>
             </div>
         </>

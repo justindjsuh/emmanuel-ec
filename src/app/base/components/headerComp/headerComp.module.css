@@ -135,6 +135,10 @@
     border: 1px solid #d6d6d6;
 }
 
+.checkboxContainer {
+    z-index: 5;
+}
+
 #navIcon {
     width: 35px;
     height: 30px;
@@ -169,6 +173,7 @@
     -moz-transition: .25s ease-in-out;
     -o-transition: .25s ease-in-out;
     transition: .25s ease-in-out;
+    z-index: 5;
 }
 
 #navIcon span:nth-child(1) {
