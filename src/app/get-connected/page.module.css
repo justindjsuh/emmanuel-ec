@@ -12,7 +12,7 @@
     align-items: center;
 }
 
-.leftContainer p:first-of-type {
+.leftContainer p:first-child {
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -44,6 +44,7 @@
 
 .inputCard {
     display: flex;
+    flex-direction: column;
 }
 
 .inputCard img {
@@ -138,6 +139,34 @@
     border-radius: 10rem;
 }
 
+.notificationTextFailure {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #ffe4e5;
+    border: 1px solid #ffbcbb;
+    color: #cc3a3b;
+    border-radius: .5rem;
+}
+
+.notificationTextSuccess {
+    padding: 1rem;
+    margin-top: 1rem;
+    background-color: #dbf8e8;
+    border: 1px solid #95eabb;
+    color: #0f9e50;
+    border-radius: .5rem;
+}
+
+.inputErr {
+    background-color: #e49bb2;
+    border: 1px solid #d3246c;
+}
+
+.errText {
+    color: #d3246c;
+    font-size: .8rem;
+}
+
 @media (max-width: 1199px) {
     .container {
         justify-content: space-around;
@@ -158,7 +187,7 @@
         height: fit-content;
         flex-direction: column;
         justify-content: flex-start;
-        padding-top: 3rem;
+        padding-top: 2rem;
         gap: 2rem;
     }
     .formContainer {

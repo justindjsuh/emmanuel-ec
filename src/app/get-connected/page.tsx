@@ -5,35 +5,83 @@ import { MouseEvent, useState } from "react";
 import Link from "next/link";
 import Head from "next/head";
 
+const successMessage =
+    "We received your message! We look forward to seeing you soon!";
+const failedMessage =
+    "Something went wrong. Try again or email us directly at emmanuelchurchpca@gmail.com";
+
+const emailRegex = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+
 const Page: React.FunctionComponent = () => {
     const [fullName, setFullName] = useState("");
     const [email, setEmail] = useState("");
     const [phoneNumber, setPhoneNumber] = useState("");
+    const [submissionSucceeded, setSubmissionSucceeded] = useState(false);
+    const [submitted, setSubmitted] = useState(false);
+    const [loading, setLoading] = useState(false);
+
+    const [emailValid, setEmailValid] = useState(true);
+    const [fullNameValid, setFullNameValid] = useState(true);
+    const [phoneNumberValid, setPhoneNumberValid] = useState(true);
+
+    const validateEmail = (email: string) => {
+        const validEmail = emailRegex.test(email);
+        if (validEmail) setEmailValid(true);
+        else setEmailValid(false);
+    };
+
+    const validateFullName = (fullName: string) => {
+        setFullNameValid(!!fullName);
+    };
+
+    const validatePhoneNumber = (phoneNumber: string) => {
+        if (phoneNumber.length !== 10) setPhoneNumberValid(false);
+        else setPhoneNumberValid(true);
+    };
 
     const onSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        try {
-            const res = await fetch("/api/send-email/", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({
-                    to: "emmanuelchurchpca@gmail.com",
-                    fullName,
-                    subject: `Newcomer Form | ${fullName}`,
-                    text: `Someone has expressed interest in Emmanuel EC!\nName: ${fullName}\nEmail: ${email}\nPhone Number: ${phoneNumber}`,
-                }),
-            });
+        if (fullName && email && emailValid && phoneNumber) {
+            try {
+                setLoading(true);
+                setSubmissionSucceeded(false);
+                const res = await fetch("/api/send-email/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({
+                        to: "emmanuelchurchpca@gmail.com",
+                        fullName,
+                        subject: `Newcomer Form | ${fullName}`,
+                        text: `Someone has expressed interest in Emmanuel EC!\nName: ${fullName}\nEmail: ${email}\nPhone Number: ${phoneNumber}`,
+                    }),
+                });
 
-            if (res.ok) {
-                setFullName("");
-                setEmail("");
-                setPhoneNumber("");
-                alert("Email sent successfully");
-            } else {
-                alert("Failed to send email");
+                if (res.ok) {
+                    setFullName("");
+                    setEmail("");
+                    setPhoneNumber("");
+                    setSubmissionSucceeded(true);
+                    setSubmitted(true);
+                    setLoading(false);
+                } else {
+                    setSubmissionSucceeded(false);
+                    setSubmitted(true);
+                    setLoading(false);
+                }
+            } catch (error) {
+                setLoading(false);
+                setSubmitted(true);
+                setSubmissionSucceeded(false);
+                console.error(
+                    "An error occurred while sending the email",
+                    error
+                );
             }
-        } catch (error) {
-            console.error("An error occurred while sending the email", error);
+        } else {
+            setSubmitted(false);
+            setFullNameValid(false);
+            setEmailValid(false);
+            setPhoneNumberValid(false);
         }
     };
 
@@ -42,9 +90,6 @@ const Page: React.FunctionComponent = () => {
         let numericValue = inputValue.replace(/[^0-9]/g, "");
         setPhoneNumber(numericValue);
     };
-
-    const enableButton = () =>
-        fullName && email && phoneNumber.length === 10 ? false : true;
 
     return (
         <div className={styles.container}>
@@ -92,8 +137,16 @@ const Page: React.FunctionComponent = () => {
                                 type="text"
                                 placeholder="Full Name"
                                 value={fullName}
-                                onChange={(e) => setFullName(e.target.value)}
+                                onChange={(e) => {
+                                    setFullName(e.target.value);
+                                    validateFullName(e.target.value);
+                                }}
                             />
+                            {!fullNameValid && (
+                                <p className={styles.errText}>
+                                    This field is required
+                                </p>
+                            )}
                         </div>
                         <div className={styles.inputCard}>
                             <Image
@@ -106,11 +159,20 @@ const Page: React.FunctionComponent = () => {
                             <input
                                 name="email"
                                 value={email}
+                                className={!emailValid ? styles.inputErr : ""}
                                 placeholder="Email"
                                 autoComplete="off"
                                 type="text"
-                                onChange={(e) => setEmail(e.target.value)}
+                                onChange={(e) => {
+                                    setEmail(e.target.value);
+                                    validateEmail(e.target.value);
+                                }}
                             />
+                            {!emailValid && (
+                                <p className={styles.errText}>
+                                    Please enter a valid email
+                                </p>
+                            )}
                         </div>
                         <div className={styles.inputCard}>
                             <Image
@@ -127,19 +189,34 @@ const Page: React.FunctionComponent = () => {
                                 autoComplete="off"
                                 type="tel"
                                 value={phoneNumber}
-                                onChange={formatPhoneNumber}
+                                onChange={(e) => {
+                                    formatPhoneNumber(e);
+                                    validatePhoneNumber(e.target.value);
+                                }}
                             />
+                            {!phoneNumberValid && (
+                                <p className={styles.errText}>
+                                    Please enter a valid phone number
+                                </p>
+                            )}
                         </div>
-                        <button
-                            onClick={(e) => onSubmit(e)}
-                            disabled={enableButton()}
-                            className={`${
-                                enableButton() ? styles.disabled : null
-                            }`}
-                        >
-                            Get Connected!
+                        <button onClick={(e) => onSubmit(e)}>
+                            {loading ? "Sending..." : "Get Connected!"}
                         </button>
                     </form>
+                    {submitted && (
+                        <p
+                            className={
+                                submissionSucceeded
+                                    ? styles.notificationTextSuccess
+                                    : styles.notificationTextFailure
+                            }
+                        >
+                            {submissionSucceeded
+                                ? successMessage
+                                : failedMessage}
+                        </p>
+                    )}
                 </div>
             </div>
             <div className={styles.rightContainer}>
