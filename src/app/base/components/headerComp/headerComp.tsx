@@ -1,6 +1,6 @@
 import Image from "next/image";
 import styles from "./headerComp.module.css";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Link from "next/link";
 
 interface IHeaderProps {
@@ -29,6 +29,8 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
     const scrollToSection = (
         ref: React.RefObject<HTMLElement> | null | undefined
     ) => {
+        setMobileMenuOpen(false);
+        toggleMenu();
         ref?.current?.scrollIntoView({ behavior: "smooth" });
     };
 
@@ -122,7 +124,15 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
                         </a>
                     </button>
                     <hr />
-                    <button>About Us</button>
+                    <button onClick={() => scrollToSection(detailsRef)}>
+                        Our Ministries
+                    </button>
+                    <hr />
+                    <button
+                        onClick={() => scrollToSection(visionAndMissionRef)}
+                    >
+                        About Us
+                    </button>
                 </div>
             </div>
         </>
