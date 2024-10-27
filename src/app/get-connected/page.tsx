@@ -3,6 +3,7 @@ import Image from "next/image";
 import styles from "./page.module.css";
 import { MouseEvent, useState } from "react";
 import Link from "next/link";
+import Head from "next/head";
 
 const Page: React.FunctionComponent = () => {
     const [fullName, setFullName] = useState("");
@@ -47,6 +48,14 @@ const Page: React.FunctionComponent = () => {
 
     return (
         <div className={styles.container}>
+            <Head>
+                <link
+                    rel="preload"
+                    href="/church-bg.jpg"
+                    as="image"
+                    type="image/jpeg"
+                />
+            </Head>
             <div className={styles.leftContainer}>
                 <Link href="/">
                     <Image
