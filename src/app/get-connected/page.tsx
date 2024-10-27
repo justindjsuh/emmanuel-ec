@@ -41,7 +41,14 @@ const Page: React.FunctionComponent = () => {
 
     const onSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
         e.preventDefault();
-        if (fullName && email && emailValid && phoneNumber) {
+        if (
+            fullName &&
+            fullNameValid &&
+            email &&
+            emailValid &&
+            phoneNumber &&
+            fullNameValid
+        ) {
             try {
                 setLoading(true);
                 setSubmissionSucceeded(false);
