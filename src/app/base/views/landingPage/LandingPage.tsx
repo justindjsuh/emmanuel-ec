@@ -3,10 +3,21 @@ import styles from "./LandingPage.module.css";
 import HeaderComp from "../../components/headerComp/headerComp";
 import Link from "next/link";
 
-const LandingPage: React.FunctionComponent = () => {
+interface ILandingPageProps {
+    detailsRef?: React.RefObject<HTMLElement> | null;
+    visionAndMissionRef?: React.RefObject<HTMLElement> | null;
+}
+
+const LandingPage: React.FunctionComponent<ILandingPageProps> = ({
+    detailsRef,
+    visionAndMissionRef,
+}) => {
     return (
         <div className={styles.landingPage}>
-            <HeaderComp />
+            <HeaderComp
+                detailsRef={detailsRef}
+                visionAndMissionRef={visionAndMissionRef}
+            />
             <div className={styles.landingPageContainer}>
                 <div className={styles.landingDetails}>
                     <h1>WELCOME</h1>

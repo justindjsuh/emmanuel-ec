@@ -5,10 +5,14 @@ import Link from "next/link";
 
 interface IHeaderProps {
     useBlackText?: boolean;
+    detailsRef?: React.RefObject<HTMLElement> | null;
+    visionAndMissionRef?: React.RefObject<HTMLElement> | null;
 }
 
 const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
     useBlackText = false,
+    detailsRef,
+    visionAndMissionRef,
 }) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -20,6 +24,12 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
         } else {
             document.body.classList.remove("noScroll");
         }
+    };
+
+    const scrollToSection = (
+        ref: React.RefObject<HTMLElement> | null | undefined
+    ) => {
+        ref?.current?.scrollIntoView({ behavior: "smooth" });
     };
 
     return (
@@ -61,9 +71,14 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
                             Tune In Live
                         </a>
                     </button>
-                    {/* <button>
-                        <Link href="/about">About Us</Link>
-                    </button> */}
+                    <button onClick={() => scrollToSection(detailsRef)}>
+                        Our Ministries
+                    </button>
+                    <button
+                        onClick={() => scrollToSection(visionAndMissionRef)}
+                    >
+                        About Us
+                    </button>
                 </div>
             </div>
             <div className={styles.headerContainerMobile}>
@@ -106,10 +121,8 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
                             Tune In Live
                         </a>
                     </button>
-                    {/* <hr />
-                    <button>
-                        <Link href="/about">About Us</Link>
-                    </button> */}
+                    <hr />
+                    <button>About Us</button>
                 </div>
             </div>
         </>

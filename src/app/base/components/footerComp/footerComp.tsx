@@ -2,7 +2,23 @@ import Image from "next/image";
 import styles from "./footerComp.module.css";
 import Link from "next/link";
 
-const FooterComp: React.FunctionComponent = () => {
+interface IFooterProps {
+    landingRef?: React.RefObject<HTMLElement> | null;
+    detailsRef?: React.RefObject<HTMLElement> | null;
+    visionAndMissionRef?: React.RefObject<HTMLElement> | null;
+}
+
+const FooterComp: React.FunctionComponent<IFooterProps> = ({
+    landingRef,
+    detailsRef,
+    visionAndMissionRef,
+}) => {
+    const scrollToSection = (
+        ref: React.RefObject<HTMLElement> | null | undefined
+    ) => {
+        ref?.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <div className={styles.footerContainer}>
             <div className={styles.imgContainer}>
@@ -13,6 +29,7 @@ const FooterComp: React.FunctionComponent = () => {
                     width={448}
                     height={107}
                     priority
+                    onClick={() => scrollToSection(landingRef)}
                 />
             </div>
             <div className={styles.navFooterContainer}>
@@ -28,9 +45,14 @@ const FooterComp: React.FunctionComponent = () => {
                         >
                             Tune In Live
                         </a>
-                        {/* <button>
-                            <Link href="/about">About Us</Link>
-                        </button> */}
+                        <button onClick={() => scrollToSection(detailsRef)}>
+                            Our Ministries
+                        </button>
+                        <button
+                            onClick={() => scrollToSection(visionAndMissionRef)}
+                        >
+                            About Us
+                        </button>
                     </div>
                 </div>
                 <div className={styles.navFooterTwo}>

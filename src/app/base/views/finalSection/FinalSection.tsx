@@ -2,7 +2,17 @@ import Link from "next/link";
 import FooterComp from "../../components/footerComp/footerComp";
 import styles from "./FinalSection.module.css";
 
-const FinalSection: React.FunctionComponent = () => {
+interface IFinalSectionProps {
+    landingRef?: React.RefObject<HTMLElement> | null;
+    detailsRef?: React.RefObject<HTMLElement> | null;
+    visionAndMissionRef?: React.RefObject<HTMLElement> | null;
+}
+
+const FinalSection: React.FunctionComponent<IFinalSectionProps> = ({
+    landingRef,
+    detailsRef,
+    visionAndMissionRef,
+}) => {
     return (
         <>
             <div className={styles.finalSectionContainer}>
@@ -11,7 +21,11 @@ const FinalSection: React.FunctionComponent = () => {
                     <Link href="/get-connected">GET CONNECTED</Link>
                 </button>
             </div>
-            <FooterComp />
+            <FooterComp
+                landingRef={landingRef}
+                detailsRef={detailsRef}
+                visionAndMissionRef={visionAndMissionRef}
+            />
         </>
     );
 };
