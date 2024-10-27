@@ -28,9 +28,9 @@ const FooterComp: React.FunctionComponent = () => {
                         >
                             Tune In Live
                         </a>
-                        <button>
+                        {/* <button>
                             <Link href="/about">About Us</Link>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
                 <div className={styles.navFooterTwo}>

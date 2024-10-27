@@ -3,7 +3,13 @@ import styles from "./headerComp.module.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-const HeaderComp: React.FunctionComponent = () => {
+interface IHeaderProps {
+    useBlackText?: boolean;
+}
+
+const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
+    useBlackText = false,
+}) => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const toggleMenu = () => {
@@ -21,14 +27,27 @@ const HeaderComp: React.FunctionComponent = () => {
             <div className={styles.headerContainer}>
                 <div>
                     {/* Icon */}
-                    <Image
-                        src="/Header_Logo.png"
-                        alt="Emmanuel Header Logo"
-                        className={styles.headerLogo}
-                        width={648}
-                        height={121}
-                        priority
-                    />
+                    {useBlackText ? (
+                        <Link href="/">
+                            <Image
+                                src="/header_logo_black.png"
+                                alt="Emmanuel Header Logo"
+                                className={styles.headerLogo}
+                                width={375}
+                                height={70}
+                                priority
+                            />
+                        </Link>
+                    ) : (
+                        <Image
+                            src="/Header_Logo.png"
+                            alt="Emmanuel Header Logo"
+                            className={styles.headerLogo}
+                            width={648}
+                            height={121}
+                            priority
+                        />
+                    )}
                 </div>
                 <div className={styles.navButtonContainer}>
                     <button>
@@ -42,7 +61,9 @@ const HeaderComp: React.FunctionComponent = () => {
                             Tune In Live
                         </a>
                     </button>
-                    <button>About Us</button>
+                    {/* <button>
+                        <Link href="/about">About Us</Link>
+                    </button> */}
                 </div>
             </div>
             <div className={styles.headerContainerMobile}>
@@ -85,10 +106,10 @@ const HeaderComp: React.FunctionComponent = () => {
                             Tune In Live
                         </a>
                     </button>
-                    <hr />
+                    {/* <hr />
                     <button>
                         <Link href="/about">About Us</Link>
-                    </button>
+                    </button> */}
                 </div>
             </div>
         </>
