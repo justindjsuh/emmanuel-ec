@@ -157,6 +157,8 @@ const Page: React.FunctionComponent = () => {
                     fill
                     style={{ objectFit: "cover" }}
                     sizes="100%"
+                    placeholder="blur"
+                    blurDataURL="/church-bg-lowres.jpg"
                     priority
                 />
             </div>
