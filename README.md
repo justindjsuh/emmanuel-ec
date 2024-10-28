@@ -25,7 +25,7 @@
 ## Demo
 
 <p align="center">
-    <img src="./portfolio-sc/portfolio-gif.gif" width="738" />
+    <img src="./sc/ec-website-demo.gif" width="738" />
 </p>
 
 
@@ -34,39 +34,32 @@
 <h3 align="center">Landing Page<h3>
 
 <p align="center">
-    <img src="./portfolio-sc/landing.PNG" alt="portfolio landing page" width="738">
+    <img src="./sc/landing_view.png" alt="landing page" width="738">
 </p>
 
-<h3 align="center">About<h3>
+<h3 align="center">Sign Up Form<h3>
 
 <p align="center">
-    <img src="./portfolio-sc/about.PNG" alt="portfolio about page" width="738">
+    <img src="./sc/signup_form.png" alt="sign up form" width="738">
 </p>
 
-<h3 align="center">Experience<h3>
+<h3 align="center">Ministries<h3>
 
 <p align="center">
-    <img src="./portfolio-sc/experience.PNG" alt="portfolio experience page" width="738">
+    <img src="./sc/events.png" alt="ministries section" width="738">
 </p>
 
-<h3 align="center">Projects<h3>
+<h3 align="center">Vision & Values<h3>
 
 <p align="center">
-    <img src="./portfolio-sc/projects.PNG" alt="portfolio project page" width="738">
+    <img src="./sc/vision_and_values.png" alt="vision and values section" width="738">
 </p>
 
-<h3 align="center">Contact<h3>
+<h3 align="center">Footer & Last Section<h3>
 
 <p align="center">
-    <img src="./portfolio-sc/contact.PNG" alt="portfolio contact page" width="738">
+    <img src="./sc/footer_last_section.png" alt="footer and last section" width="738">
 </p>
-
-<h3 align="center">Dark Mode Theme<h3>
-
-<p align="center">
-    <img src="./portfolio-sc/dark-mode.PNG" alt="portfolio dark mode contact page" width="738">
-</p>
-
 
 
 ## Tech Stack
