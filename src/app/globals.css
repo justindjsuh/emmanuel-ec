@@ -3,6 +3,7 @@
   --background-primary: #fff;
   --background-secondary: #F8F8F8;
   --background-tertiary: #F7EDE2;
+  /* --background-quaternary: #69847d; */
   --background-quaternary: #84A59D;
   --divider-primary: #E3E3E3;
   --text-primary-dark: #000;
@@ -36,4 +37,9 @@ body {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.noScroll {
+    height: 100vh;
+    overflow: hidden;
 }
