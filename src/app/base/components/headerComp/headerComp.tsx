@@ -29,6 +29,12 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
     const scrollToSection = (
         ref: React.RefObject<HTMLElement> | null | undefined
     ) => {
+        ref?.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    const scrollToSectionMobile = (
+        ref: React.RefObject<HTMLElement> | null | undefined
+    ) => {
         setMobileMenuOpen(false);
         toggleMenu();
         ref?.current?.scrollIntoView({ behavior: "smooth" });
@@ -124,12 +130,14 @@ const HeaderComp: React.FunctionComponent<IHeaderProps> = ({
                         </a>
                     </button>
                     <hr />
-                    <button onClick={() => scrollToSection(detailsRef)}>
+                    <button onClick={() => scrollToSectionMobile(detailsRef)}>
                         Our Ministries
                     </button>
                     <hr />
                     <button
-                        onClick={() => scrollToSection(visionAndMissionRef)}
+                        onClick={() =>
+                            scrollToSectionMobile(visionAndMissionRef)
+                        }
                     >
                         About Us
                     </button>
