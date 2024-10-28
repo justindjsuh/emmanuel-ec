@@ -26,9 +26,10 @@ const Home = () => {
             <section ref={visionAndMissionRef}>
                 <VisionMissionSection />
             </section>
-            <section>
+            {/* Commented out till we get the video and description from PDaniel */}
+            {/* <section>
                 <WhoWeAreSection />
-            </section>
+            </section> */}
             <section>
                 <FinalSection
                     landingRef={landingRef}
