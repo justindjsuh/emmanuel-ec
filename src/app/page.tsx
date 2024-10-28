@@ -6,6 +6,7 @@ import DetailsSection from "./base/views/detailsSection/DetailsSection";
 import VisionMissionSection from "./base/views/visionMissionSection/VisionMissionSection";
 import FinalSection from "./base/views/finalSection/FinalSection";
 import WhoWeAreSection from "./base/views/whoWeAreSection/WhoWeAreSection";
+import Head from "next/head";
 
 const Home = () => {
     const landingRef = useRef<HTMLElement | null>(null);
@@ -14,6 +15,9 @@ const Home = () => {
 
     return (
         <main className={styles.main}>
+            <Head>
+                <title>Emmanuel English Congregation</title>
+            </Head>
             <section ref={landingRef}>
                 <LandingPage
                     detailsRef={detailsRef}
