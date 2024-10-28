@@ -107,6 +107,7 @@ const Page: React.FunctionComponent = () => {
                     as="image"
                     type="image/jpeg"
                 />
+                <title>Emmanuel English Congregation</title>
             </Head>
             <div className={styles.leftContainer}>
                 <Link href="/">
