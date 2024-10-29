@@ -13,7 +13,6 @@
 [Purpose](#purpose) •
 [Demo](#demo) •
 [Tech Stack](#tech-stack) •
-[Packages](#packages) •
 [Lessons Learned](#lessons-learned)
 
 </div>
