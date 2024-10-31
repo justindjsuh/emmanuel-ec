@@ -24,19 +24,22 @@ const Page: React.FunctionComponent = () => {
     const [fullNameValid, setFullNameValid] = useState(true);
     const [phoneNumberValid, setPhoneNumberValid] = useState(true);
 
-    const validateEmail = (email: string) => {
+    const validateEmail = (email: string, validation = false) => {
         const validEmail = emailRegex.test(email);
         if (validEmail) setEmailValid(true);
         else setEmailValid(false);
+        if (validation) return validEmail;
     };
 
-    const validateFullName = (fullName: string) => {
+    const validateFullName = (fullName: string, validation = false) => {
         setFullNameValid(!!fullName);
+        if (validation) return !!fullName;
     };
 
-    const validatePhoneNumber = (phoneNumber: string) => {
+    const validatePhoneNumber = (phoneNumber: string, validation = false) => {
         if (phoneNumber.length !== 10) setPhoneNumberValid(false);
         else setPhoneNumberValid(true);
+        if (validation) return !!fullName;
     };
 
     const onSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
@@ -86,9 +89,11 @@ const Page: React.FunctionComponent = () => {
             }
         } else {
             setSubmitted(false);
-            setFullNameValid(false);
-            setEmailValid(false);
-            setPhoneNumberValid(false);
+            if (!fullName && validateFullName(fullName, true))
+                setFullNameValid(false);
+            if (!email && validateEmail(email, true)) setEmailValid(false);
+            if (!phoneNumber && validatePhoneNumber(phoneNumber, true))
+                setPhoneNumberValid(false);
         }
     };
 
