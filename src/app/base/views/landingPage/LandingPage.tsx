@@ -1,8 +1,9 @@
+"use client";
 import Image from "next/image";
 import styles from "./LandingPage.module.css";
 import HeaderComp from "../../components/headerComp/headerComp";
 import Link from "next/link";
-import Head from "next/head";
+import { useEffect } from "react";
 
 interface ILandingPageProps {
     detailsRef?: React.RefObject<HTMLElement> | null;
@@ -13,11 +14,21 @@ const LandingPage: React.FunctionComponent<ILandingPageProps> = ({
     detailsRef,
     visionAndMissionRef,
 }) => {
+    useEffect(() => {
+        const setViewPortHeight = () => {
+            const adjustedHeight = window.innerHeight * 0.9;
+            document.documentElement.style.setProperty(
+                "--vh",
+                `${adjustedHeight * 0.01}px`
+            );
+        };
+        setViewPortHeight();
+        window.addEventListener("resize", setViewPortHeight);
+        return () => window.removeEventListener("resize", setViewPortHeight);
+    }, []);
+
     return (
         <div className={styles.landingPage}>
-            <Head>
-                <title>Emmanuel English Congregation</title>
-            </Head>
             <HeaderComp
                 detailsRef={detailsRef}
                 visionAndMissionRef={visionAndMissionRef}
