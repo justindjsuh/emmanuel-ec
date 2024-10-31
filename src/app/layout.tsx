@@ -2,7 +2,11 @@ import { Montserrat } from "next/font/google";
 import "./globals.css";
 import Head from "next/head";
 
-const montserrat = Montserrat({ subsets: ["latin"], display: "swap" });
+const montserrat = Montserrat({
+    subsets: ["latin"],
+    preload: true,
+    display: "swap",
+});
 
 export const metadata = {
     title: "Emmanuel English Congregation",
